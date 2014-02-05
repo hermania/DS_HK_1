@@ -8,21 +8,31 @@
 	"buffers":
 	[
 		{
-			"contents": "install\n\ninstall\ngit\npython\ninstall\nproject\n~\n===\n\n~~~",
+			"contents": "",
 			"settings":
 			{
-				"buffer_size": 54,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "# Data Science @ Hong Kong\n\nRepository for raw data and sripts. Course Materials are hosted on the [GitHub Wiki](https://github.com/ga-students/DS_HK_1/wiki).\n\nThe wiki can be cloned with \n\n`git clone git@github.com:ga-students/DS_HK_1.wiki.git`\n",
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "COMMIT_EDITMSG",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
 			"file": "ronald",
 			"file_size": -1,
 			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 246,
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -30,9 +40,57 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 147.0,
+		"height": 317.0,
 		"selected_items":
 		[
+			[
+				"",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"gi",
+				"Git: Commit"
+			],
+			[
+				"g",
+				"Git: Commit"
+			],
+			[
+				"pu",
+				"Git: Push Tags"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"com",
+				"Git: Commit history"
+			],
+			[
+				"git d",
+				"Git: Diff Staged"
+			],
+			[
+				"git di",
+				"Git: Diff All"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"gitdiff",
+				"Git: Diff All"
+			],
 			[
 				"save",
 				"Project: Save As"
@@ -52,19 +110,17 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"",
-				"Git: Commit history"
 			]
 		],
-		"width": 449.0
+		"width": 436.0
 	},
 	"console":
 	{
 		"height": 139.0,
 		"history":
 		[
+			"git config --global push.default simple",
+			"squelch default message",
 			"project",
 			"ssh",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
@@ -84,10 +140,13 @@
 	},
 	"file_history":
 	[
+		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/lesson01/hermannytimeslesson02.py",
+		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/lesson01/hermannytimes.py",
+		"/Users/ronaldyu/Desktop/DS_HK_1/hermannytimes.py"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -101,6 +160,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Bridgette Yang"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -126,15 +186,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 54,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54,
-								54
+								0,
+								0
 							]
 						],
 						"settings":
@@ -150,11 +210,38 @@
 				},
 				{
 					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git/syntax/Git Commit Message.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "ronald",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 246,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -173,7 +260,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -181,7 +268,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -214,10 +301,14 @@
 	{
 		"height": 0.0
 	},
+	"output.git":
+	{
+		"height": 224.0
+	},
 	"project": "Project1.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -230,11 +321,15 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/Desktop/DS_HK_1/Project1.sublime-workspace"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

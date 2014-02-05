@@ -1,0 +1,362 @@
+
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/.DS_Store b/.DS_Store
+index c403155..7382f84 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/Project1.sublime-workspace b/Project1.sublime-workspace
+index 96ef185..d85356a 100644
+--- a/Project1.sublime-workspace
++++ b/Project1.sublime-workspace
+@@ -16,6 +16,16 @@
+ 			}
+ 		},
+ 		{
++			"contents": "Herman's Dad has added nytimes.csv\n\n# --------------\n# Please enter the commit message for your changes. Everything below\n# this paragraph is ignored, and an empty message aborts the commit.\n# Just close the window to accept your message.\ndiff --git a/.DS_Store b/.DS_Store\nnew file mode 100644\nindex 0000000..c403155\nBinary files /dev/null and b/.DS_Store differ\ndiff --git a/DS_HK_1.sublime-project b/DS_HK_1.sublime-project\nnew file mode 100644\nindex 0000000..9cbd597\n--- /dev/null\n+++ b/DS_HK_1.sublime-project\n@@ -0,0 +1,9 @@\n+{\n+	\"folders\":\n+	[\n+		{\n+			\"follow_symlinks\": true,\n+			\"path\": \".\"\n+		}\n+	]\n+}\ndiff --git a/Project1.sublime-workspace b/Project1.sublime-workspace\nnew file mode 100644\nindex 0000000..96ef185\n--- /dev/null\n+++ b/Project1.sublime-workspace\n@@ -0,0 +1,259 @@\n+{\n+	\"auto_complete\":\n+	{\n+		\"selected_items\":\n+		[\n+		]\n+	},\n+	\"buffers\":\n+	[\n+		{\n+			\"contents\": \"install\\n\\ninstall\\ngit\\npython\\ninstall\\nproject\\n~\\n===\\n\\n~~~\",\n+			\"settings\":\n+			{\n+				\"buffer_size\": 54,\n+				\"line_ending\": \"Unix\"\n+			}\n+		},\n+		{\n+			\"contents\": \"# Data Science @ Hong Kong\\n\\nRepository for raw data and sripts. Course Materials are hosted on the [GitHub Wiki](https://github.com/ga-students/DS_HK_1/wiki).\\n\\nThe wiki can be cloned with \\n\\n`git clone git@github.com:ga-students/DS_HK_1.wiki.git`\\n\",\n+			\"file\": \"ronald\",\n+			\"file_size\": -1,\n+			\"file_write_time\": -1,\n+			\"settings\":\n+			{\n+				\"buffer_size\": 246,\n+				\"line_ending\": \"Unix\"\n+			}\n+		}\n+	],\n+	\"build_system\": \"\",\n+	\"command_palette\":\n+	{\n+		\"height\": 147.0,\n+		\"selected_items\":\n+		[\n+			[\n+				\"save\",\n+				\"Project: Save As\"\n+			],\n+			[\n+				\"proje\",\n+				\"Project: Add Folder\"\n+			],\n+			[\n+				\"pro\",\n+				\"Project: Add Folder\"\n+			],\n+			[\n+				\"python\",\n+				\"Set Syntax: Python\"\n+			],\n+			[\n+				\"insta\",\n+				\"Package Control: Install Package\"\n+			],\n+			[\n+				\"\",\n+				\"Git: Commit history\"\n+			]\n+		],\n+		\"width\": 449.0\n+	},\n+	\"console\":\n+	{\n+		\"height\": 139.0,\n+		\"history\":\n+		[\n+			\"project\",\n+			\"ssh\",\n+			\"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)\",\n+			\"install\",\n+			\"project\",\n+			\"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)\"\n+		]\n+	},\n+	\"distraction_free\":\n+	{\n+		\"menu_visible\": true,\n+		\"show_minimap\": false,\n+		\"show_open_files\": false,\n+		\"show_tabs\": false,\n+		\"side_bar_visible\": false,\n+		\"status_bar_visible\": false\n+	},\n+	\"file_history\":\n+	[\n+	],\n+	\"find\":\n+	{\n+		\"height\": 0.0\n+	},\n+	\"find_in_files\":\n+	{\n+		\"height\": 0.0,\n+		\"where_history\":\n+		[\n+		]\n+	},\n+	\"find_state\":\n+	{\n+		\"case_sensitive\": false,\n+		\"find_history\":\n+		[\n+		],\n+		\"highlight\": true,\n+		\"in_selection\": false,\n+		\"preserve_case\": false,\n+		\"regex\": false,\n+		\"replace_history\":\n+		[\n+		],\n+		\"reverse\": false,\n+		\"show_context\": true,\n+		\"use_buffer2\": true,\n+		\"whole_word\": false,\n+		\"wrap\": true\n+	},\n+	\"groups\":\n+	[\n+		{\n+			\"selected\": 1,\n+			\"sheets\":\n+			[\n+				{\n+					\"buffer\": 0,\n+					\"semi_transient\": false,\n+					\"settings\":\n+					{\n+						\"buffer_size\": 54,\n+						\"regions\":\n+						{\n+						},\n+						\"selection\":\n+						[\n+							[\n+								54,\n+								54\n+							]\n+						],\n+						\"settings\":\n+						{\n+							\"syntax\": \"Packages/Python/Python.tmLanguage\"\n+						},\n+						\"translation.x\": 0.0,\n+						\"translation.y\": 0.0,\n+						\"zoom_level\": 1.0\n+					},\n+					\"stack_index\": 1,\n+					\"type\": \"text\"\n+				},\n+				{\n+					\"buffer\": 1,\n+					\"file\": \"ronald\",\n+					\"semi_transient\": false,\n+					\"settings\":\n+					{\n+						\"buffer_size\": 246,\n+						\"regions\":\n+						{\n+						},\n+						\"selection\":\n+						[\n+							[\n+								0,\n+								0\n+							]\n+						],\n+						\"settings\":\n+						{\n+							\"syntax\": \"Packages/Text/Plain text.tmLanguage\"\n+						},\n+						\"translation.x\": 0.0,\n+						\"translation.y\": 0.0,\n+						\"zoom_level\": 1.0\n+					},\n+					\"stack_index\": 0,\n+					\"type\": \"text\"\n+				}\n+			]\n+		}\n+	],\n+	\"incremental_find\":\n+	{\n+		\"height\": 0.0\n+	},\n+	\"input\":\n+	{\n+		\"height\": 33.0\n+	},\n+	\"layout\":\n+	{\n+		\"cells\":\n+		[\n+			[\n+				0,\n+				0,\n+				1,\n+				1\n+			]\n+		],\n+		\"cols\":\n+		[\n+			0.0,\n+			1.0\n+		],\n+		\"rows\":\n+		[\n+			0.0,\n+			1.0\n+		]\n+	},\n+	\"menu_visible\": true,\n+	\"output.find_results\":\n+	{\n+		\"height\": 0.0\n+	},\n+	\"project\": \"Project1.sublime-project\",\n+	\"replace\":\n+	{\n+		\"height\": 0.0\n+	},\n+	\"save_all_on_build\": true,\n+	\"select_file\":\n+	{\n+		\"height\": 0.0,\n+		\"selected_items\":\n+		[\n+		],\n+		\"width\": 0.0\n+	},\n+	\"select_project\":\n+	{\n+		\"height\": 0.0,\n+		\"selected_items\":\n+		[\n+		],\n+		\"width\": 0.0\n+	},\n+	\"select_symbol\":\n+	{\n+		\"height\": 0.0,\n+		\"selected_items\":\n+		[\n+		],\n+		\"width\": 0.0\n+	},\n+	\"settings\":\n+	{\n+	},\n+	\"show_minimap\": true,\n+	\"show_open_files\": false,\n+	\"show_tabs\": true,\n+	\"side_bar_visible\": true,\n+	\"side_bar_width\": 150.0,\n+	\"status_bar_visible\": true,\n+	\"template_settings\":\n+	{\n+	}\n+}\ndiff --git a/finals/.DS_Store b/finals/.DS_Store\nnew file mode 100644\nindex 0000000..107c28d\nBinary files /dev/null and b/finals/.DS_Store differ\ndiff --git a/finals/readme.md b/finals/readme.md\ndeleted file mode 100644\nindex ff3209f..0000000\n--- a/finals/readme.md\n+++ /dev/null\n@@ -1 +0,0 @@\n-# Final Projects for DS_HK_1\ndiff --git a/finals/ronald/readme.md b/finals/ronald/readme.md\nnew file mode 100644\nindex 0000000..ff3209f\n--- /dev/null\n+++ b/finals/ronald/readme.md\n@@ -0,0 +1 @@\n+# Final Projects for DS_HK_1\ndiff --git a/lessons/.DS_Store b/lessons/.DS_Store\nnew file mode 100644\nindex 0000000..a13ddcc\nBinary files /dev/null and b/lessons/.DS_Store differ",
++			"settings":
++			{
++				"buffer_size": 6481,
++				"line_ending": "Unix",
++				"name": "COMMIT_EDITMSG",
++				"scratch": true
++			}
++		},
++		{
+ 			"contents": "# Data Science @ Hong Kong\n\nRepository for raw data and sripts. Course Materials are hosted on the [GitHub Wiki](https://github.com/ga-students/DS_HK_1/wiki).\n\nThe wiki can be cloned with \n\n`git clone git@github.com:ga-students/DS_HK_1.wiki.git`\n",
+ 			"file": "ronald",
+ 			"file_size": -1,
+@@ -30,10 +40,50 @@
+ 	"build_system": "",
+ 	"command_palette":
+ 	{
+-		"height": 147.0,
++		"height": 362.0,
+ 		"selected_items":
+ 		[
+ 			[
++				"gi",
++				"Git: Commit"
++			],
++			[
++				"g",
++				"Git: Commit"
++			],
++			[
++				"pu",
++				"Git: Push Tags"
++			],
++			[
++				"pus",
++				"Git: Push"
++			],
++			[
++				"push",
++				"Git: Push"
++			],
++			[
++				"com",
++				"Git: Commit history"
++			],
++			[
++				"git d",
++				"Git: Diff Staged"
++			],
++			[
++				"git di",
++				"Git: Diff All"
++			],
++			[
++				"git add",
++				"Git: Add..."
++			],
++			[
++				"gitdiff",
++				"Git: Diff All"
++			],
++			[
+ 				"save",
+ 				"Project: Save As"
+ 			],
+@@ -65,6 +115,8 @@
+ 		"height": 139.0,
+ 		"history":
+ 		[
++			"git config --global push.default simple",
++			"squelch default message",
+ 			"project",
+ 			"ssh",
+ 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+@@ -150,6 +202,33 @@
+ 				},
+ 				{
+ 					"buffer": 1,
++					"semi_transient": false,
++					"settings":
++					{
++						"buffer_size": 6481,
++						"regions":
++						{
++						},
++						"selection":
++						[
++							[
++								34,
++								34
++							]
++						],
++						"settings":
++						{
++							"syntax": "Packages/Git/syntax/Git Commit Message.tmLanguage"
++						},
++						"translation.x": 0.0,
++						"translation.y": 0.0,
++						"zoom_level": 1.0
++					},
++					"stack_index": 0,
++					"type": "text"
++				},
++				{
++					"buffer": 2,
+ 					"file": "ronald",
+ 					"semi_transient": false,
+ 					"settings":
+@@ -173,7 +252,7 @@
+ 						"translation.y": 0.0,
+ 						"zoom_level": 1.0
+ 					},
+-					"stack_index": 0,
++					"stack_index": 2,
+ 					"type": "text"
+ 				}
+ 			]
+@@ -214,6 +293,10 @@
+ 	{
+ 		"height": 0.0
+ 	},
++	"output.git":
++	{
++		"height": 224.0
++	},
+ 	"project": "Project1.sublime-project",
+ 	"replace":
+ 	{
+@@ -230,11 +313,15 @@
+ 	},
+ 	"select_project":
+ 	{
+-		"height": 0.0,
++		"height": 500.0,
+ 		"selected_items":
+ 		[
++			[
++				"",
++				"~/Desktop/DS_HK_1/Project1.sublime-workspace"
++			]
+ 		],
+-		"width": 0.0
++		"width": 380.0
+ 	},
+ 	"select_symbol":
+ 	{
+diff --git a/lessons/.DS_Store b/lessons/.DS_Store
+index a13ddcc..fcef3a6 100644
+Binary files a/lessons/.DS_Store and b/lessons/.DS_Store differ
+diff --git a/lessons/lesson01/hermannytimes.py b/lessons/lesson01/hermannytimes.py
+new file mode 100644
+index 0000000..f130320
+--- /dev/null
++++ b/lessons/lesson01/hermannytimes.py
+@@ -0,0 +1,35 @@
++#!/usr/bin/python
++# Import required libraries
++
++from __future__ import division
++import sys
++"""
++
++"""
++
++
++# Start a counter and store the textfile in memory
++age = 0
++impressions = 0
++clicks = 0
++
++lines = sys.stdin.readlines()
++lines.pop(0)
++oldest_person = [0]
++n = len(lines)
++
++# For each line, find the sum of index 2 in the list.
++for line in lines:
++	clean_line = line.strip().split(',')
++	age = int(clean_line[0])
++
++if int(clean_line[0])>80:
++  	impressions = impressions + int(clean_line[2])
++  	clean_line = clean_line + int(clean_line[3])
++if age = int[oldestPerson[0]):
++	oldest person = clean_line
++print 'Total Unique visitors: ', n
++print 'Total Impressions: ', Impressions
++print 'Average age: ', age/n
++print 'Average Clicks per Impression: ' clicks/impressions
++print oldest_person
+\ No newline at end of file
+diff --git a/lessons/lesson01/hermannytimeslesson02.py b/lessons/lesson01/hermannytimeslesson02.py
+new file mode 100644
+index 0000000..370c2b8
+--- /dev/null
++++ b/lessons/lesson01/hermannytimeslesson02.py
+@@ -0,0 +1,31 @@
++#!/usr/bin/python
++# Import required libraries
++
++from __future__ import division
++import sys
++"""
++
++"""
++
++
++# Start a counter and store the textfile in memory
++age = 0
++impressions = 0
++count = 0
++clicks = 0
++oldest_person = [0]
++
++
++lines = sys.stdin.readlines()
++lines.pop(0)
++
++n = len(lines)
++
++# For each line, find the sum of index 2 in the list.
++for line in lines:
++	c_line = line.strip().split(',')
++	age=int(c_line[0])
++    count = count + int(line.strip().split(',')[2])
++	if age == int(oldest_person[0]):
++		oldest_person = c_line
++		print oldest_person
+\ No newline at end of file
+diff --git a/lessons/lesson02/hermanianytimeslesson02a.py b/lessons/lesson02/hermanianytimeslesson02a.py
+new file mode 100644
+index 0000000..f4bea1b
+--- /dev/null
++++ b/lessons/lesson02/hermanianytimeslesson02a.py
+@@ -0,0 +1,109 @@
++#!/usr/bin/python
++#testing
++import operator
++import itertools
++
++v = [5, 6, 7, 8]
++m1 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
++m2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
++
++def matrixvectormult1(m, v):
++    """
++    basic function to multiply matrix with a vector
++    prints each step for inspection.
++    @param list m     matrix of m*n items
++    @param list v     vector of n items
++    """
++
++    rows = len(m)
++    w = [0]*rows
++
++    print 'Result Vector Shape', w
++
++    irange = range(len(v))
++
++    print 'Irange,', irange
++
++    sum = 0
++
++    for j in range(rows):
++        print 'iteration j ', j
++        r = m[j]
++        print 'row, ', r
++        for i in irange:
++            prod = r[i]*v[i]
++            print r[i], '*', v[i], '=', prod
++            sum += prod
++        w[j],sum = sum,0
++    return w
++
++def dot(x, y):
++    """
++    dot product of a matrix row and a vector
++    checks for equal length
++    @param list x     matrix row n items
++    @param list y     vector of n items
++    """
++    assert len(x) == len(y)
++    return sum(itertools.starmap(operator.mul, itertools.izip(x, y)))
++
++def matrixvectormult2(m, v):
++    """
++    advanced function to multiply a matrix with a vector
++    @param list m     matrix of m*n items
++    @param list v     vector of n items
++    """
++    return [dot(row, v) for row in m]
++
++
++def matrixmult1(a, b):
++    """
++    basic function to multiply two matrices
++    @param list a     matrix of i*k items
++    @param list b     matrix of k*j items
++    """
++    rows_a = len(a)
++    cols_a = len(a[0])
++    rows_b = len(b)
++    cols_b = len(b[0])
++
++    if cols_a != rows_b:
++        print "cannot multiply the two matrices. Incorrect dimensions."
++        return
++
++    # create the result matrix
++    # Dimensions would be rows_a x cols_b
++    c = [[0 for row in range(cols_b)] for col in range(rows_a)]
++
++    for i in range(rows_a):
++        for j in range(cols_b):
++            for k in range(cols_a):
++                c[i][j] += a[i][k]*b[k][j]
++    return c
++
++
++def matrixmult2(a,b):
++    """
++    advanced function to multiply two matrices
++    @param list a     matrix of i*k items
++    @param list b     matrix of k*j items
++    """
++    zip_b = zip(*b)
++    return [[sum(ele_a*ele_b for ele_a, ele_b in zip(row_a, col_b)) for col_b in zip_b] for row_a in a]
++
++
++def iMatrix(size):
++    """
++    @param int size     size of the matrix to generate
++    """
++    size = range(size)
++    return [[ 1 if  x == y else 0 for x in size] for y in size]
++
++
++def is_identity_matrix(matrix):
++    """
++    @param list matrix     matrix to be checked for identity
++    """
++    return all(val == (x == y)
++        for y, row in enumerate(matrix)
++            for x, val in enumerate(row))
+\ No newline at end of file
