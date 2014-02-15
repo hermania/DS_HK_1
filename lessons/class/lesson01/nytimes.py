@@ -29,3 +29,4 @@ print 'Total Unique Visitors: ', n
 print 'Total Impressions: ', impressions
 print 'Average Age: ', age/n
 print 'Average Clicks per Impressions: ', clicks/impressions
+
