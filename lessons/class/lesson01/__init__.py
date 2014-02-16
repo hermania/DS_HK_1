@@ -28,3 +28,6 @@ print 'Total Unique Visitors: ', x
 print 'Total Impressions: ', impressions
 print 'Average Age: ', age/x
 print 'Average Clicks per Impression: ', clicks/impressions
+
+with open('nytimes.csv','w') as f:
+    print 'Writing to file %s' % (f.name)
