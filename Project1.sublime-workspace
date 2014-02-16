@@ -8,31 +8,29 @@
 	"buffers":
 	[
 		{
-			"contents": "",
+			"contents": "* 09f39de - (HEAD, origin/gh-pages, origin/HEAD, gh-pages) (9 days ago) (2014-01-27 22:15:09 +0800) <Ronald Yu> Herman's father added the nytimes.csv file\n* 07c6893 - (9 days ago) (2014-01-27 18:09:51 +0800) <Mart van de Ven> added lessons\n* 7d57e75 - (9 days ago) (2014-01-27 17:39:02 +0800) <Mart van de Ven> Adds Homework directory\n* b7c6a0b - (9 days ago) (2014-01-27 17:37:58 +0800) <Mart van de Ven> Final Project Directory\n* 12a295c - (9 days ago) (2014-01-27 17:27:00 +0800) <Mart van de Ven> Header formatting\n* 782ce34 - (9 days ago) (2014-01-27 17:26:29 +0800) <Mart van de Ven> Reference the Wiki\n* 2795b1f - (9 days ago) (2014-01-27 17:15:11 +0800) <Mart van de Ven> Raw Data\n* 1366f45 - (9 days ago) (2014-01-27 17:14:51 +0800) <Mart van de Ven> Moved Guides to Wiki\n* 4f9dc66 - (12 days ago) (2014-01-24 23:56:22 +0800) <Mart van de Ven> git guide layout\n* b917c89 - (12 days ago) (2014-01-24 23:52:06 +0800) <Mart van de Ven> Start guide for Git & Github\n* 9cf8037 - (12 days ago) (2014-01-24 17:30:32 +0800) <Mart van de Ven> Prework in Markdown\n* 906c62c - (2 weeks ago) (2014-01-19 22:32:58 -0800) <Kalina King> Initial commit\n",
 			"settings":
 			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 1146,
 				"line_ending": "Unix",
-				"name": "COMMIT_EDITMSG",
+				"name": "Git Log Graph",
+				"read_only": true,
 				"scratch": true
 			}
 		},
 		{
-			"contents": "",
-			"file": "ronald",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "lessons/class/lesson04/__init__.py",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lessons/lesson01/hermannytimeslesson02.py",
+			"settings":
+			{
+				"buffer_size": 542,
 				"line_ending": "Unix"
 			}
 		}
@@ -44,20 +42,28 @@
 		"selected_items":
 		[
 			[
-				"",
+				"cio",
 				"Git: Commit"
-			],
-			[
-				"git",
-				"Git: Init"
 			],
 			[
 				"gi",
-				"Git: Commit"
+				"Git: Push Tags"
+			],
+			[
+				"git",
+				"Git: Amend Commit"
 			],
 			[
 				"g",
-				"Git: Commit"
+				"Git: Push Tags"
+			],
+			[
+				"G",
+				"Git: Pull Current Branch"
+			],
+			[
+				"",
+				"Git: Graph All"
 			],
 			[
 				"pu",
@@ -119,6 +125,7 @@
 		"height": 139.0,
 		"history":
 		[
+			"pull upstream gh-pages",
 			"git config --global push.default simple",
 			"squelch default message",
 			"project",
@@ -140,9 +147,11 @@
 	},
 	"file_history":
 	[
+		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/class/lesson04/__init__.py",
+		"/Users/ronaldyu/Desktop/DS_HK_1/ronald",
+		"/Users/ronaldyu/Desktop/DS_HK_1/hermannytimes.py",
 		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/lesson01/hermannytimeslesson02.py",
-		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/lesson01/hermannytimes.py",
-		"/Users/ronaldyu/Desktop/DS_HK_1/hermannytimes.py"
+		"/Users/ronaldyu/Desktop/DS_HK_1/lessons/lesson01/hermannytimes.py"
 	],
 	"find":
 	{
@@ -186,20 +195,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1146,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1146,
+								1146
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Git/syntax/Git Graph.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -210,26 +219,27 @@
 				},
 				{
 					"buffer": 1,
+					"file": "lessons/class/lesson04/__init__.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1967,
+								1967
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Git/syntax/Git Commit Message.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 595.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -237,24 +247,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "ronald",
+					"file": "lessons/lesson01/hermannytimeslesson02.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2,
+								2
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -316,6 +326,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"COMMIT_EDITMSG"
+			]
 		],
 		"width": 0.0
 	},
@@ -343,7 +357,7 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
