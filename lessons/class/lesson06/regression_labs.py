@@ -89,7 +89,17 @@ sorted(fp)
 Beers
 
 """
+<<<<<<< HEAD
 import re
+=======
+
+logm = linear_model.LogisticRegression()
+
+def score(input, response):
+  logm.fit(input, response)
+  score = logm.score(input, good)
+  print 'R^2 Score : %.03f' % (score)
+>>>>>>> 8b86b759abb40289a1e599cb03b5fa762886dcc9
 
 def good(x):
   if x > 4.3:
@@ -99,22 +109,37 @@ def good(x):
 
 url = 'http://www-958.ibm.com/software/analytics/manyeyes/datasets/af-er-beer-dataset/versions/1.txt'
 
+<<<<<<< HEAD
 logm = linear_model.LogisticRegression()
 
+=======
+>>>>>>> 8b86b759abb40289a1e599cb03b5fa762886dcc9
 beer = pd.read_csv(url, delimiter="\t")
 beer = beer.dropna()
 beer['Good'] = beer['WR'].apply(good)
 
+<<<<<<< HEAD
 input = beer[ ['Reviews', 'ABV'] ].values
 good = beer['Good'].values
 
 logm.fit(input, good)
 logm.predict(input)
 logm.score(input, good)
+=======
+# Original attempt
+
+input = beer[ ['Reviews', 'ABV'] ].values
+good = beer['Good'].values
+
+score(input, good)
+
+# Second attempt, with beer types
+>>>>>>> 8b86b759abb40289a1e599cb03b5fa762886dcc9
 
 beer_types = ['Ale', 'Stout', 'IPA', 'Lager']
 
 for t in beer_types:
+<<<<<<< HEAD
 	beer[t] = beer['Name'].str.contains(t) * 1
 
 input = beer[ ['Reviews', 'ABV', 'Ale', 'Stout', 'IPA', 'Lager'] ].values
@@ -126,3 +151,18 @@ input = beer[['ABV', 'Ale', 'Stout']].values
 logm.fit(input, good)
 logm.predict(input)
 logm.score(input, good)
+=======
+	beer[t] = beer['Type'].str.contains(t) * 1
+
+select = ['Reviews', 'ABV', 'Ale', 'Stout', 'IPA', 'Lager']
+input = beer[select].values
+
+score(input, good)
+
+# Third attempt, with beer breweries
+
+dummies = pd.get_dummies(beer['Brewery'])
+input = beer[select].join(dummies.ix[:, 1:])
+
+score(input, good)
+>>>>>>> 8b86b759abb40289a1e599cb03b5fa762886dcc9
