@@ -1,0 +1,21 @@
+## Review of: Colleen V. Chien, ‘Predicting Patent Litigation’, Santa Clara University School of Law, Legal Studies Research Papers Series, No. 17-11 August 2012
+
+## Objective/Abstract: 
+This paper is about attempting to predict the likelihood an American patent will be litigated using ‘acquired’ characteristics including changes in ownership of the patent (assignments, transfers, and changes in owner size), continued investment in the patent (reexamination and maintenance fees), collateralization of the patent, and citations to the patent in contrast to past studies that looked at the intrinsic qualities of a patent such as the number of claims it has. 
+The primary hypothesis is that patents that end up in litigation have markedly different characteristics than patents that do not and that these differences develop prior to the time of litigation, suggesting that litigation-bound patents can be identified ahead of time. The results are also surprising, showing that the likelihood of litigation depends on not only how valuable the patent is but also on its owner and trans- action history.
+
+## Style: 
+The paper is aimed at an audience with a sophisticated familiarity with patents, in particular policy makers and decision makers in companies who acquire and hold patents. 
+Although patent litigation is rare —only around 1%–2% of patents re litigated – patent litigation is unpredictable and very costly. Moreover, the inability to anticipate patent litigation makes it practically uninsurable, exposes companies to costly lawsuits, and drives companies to spend millions to accumulate patents in order to discourage litigation.  
+The ability to identify patents that have a higher risk of being litigated ahead of litigation has implications for patent practice and policy as well as risk and cost management.  The researcher also notes that there may be industry-specific differences in the patterns of litigation
+
+## Methods: What methodologies did the paper use to approach its objective? How well did they work?
+The paper acknowledges that patents that are litigated posses intrinsic characteristics – more claims, more prior art citations and patent families – than unlitigated patents and that who owns a patent may impact whether the patent is litigated. 
+The paper then looks at other acquired characteristics including changes in ownership, investment in the patent after it has been issued including whether the patent holders continued to pay maintenance fees, whether the Patent Office has re-examined the patent post issue, collateralized the patent (e.g. borrowed money against the patent). 
+The researcher assembled a randomly selected group of 659 litigated patents issued in 1990, generated descriptive statistics to describe the acquired characteristics of patents developed over their lifetimes, then compared litigated and unlitigated patents along these dimensions using standard statistical approaches to see whether the differences observed were the result of chance or represented statistically significant differences, bivariate techniques to test whether or not a particular characteristic of a patent, in isolation, was correlated with the litigation of that patent, and performed logistic regression analyses to take into account the interaction between variables. 
+The researcher acknowledges that the model could be further refined – particularly to take account for technology and industry effects; nevertheless concludes that it is possible to predict whether a patent will likely be litigated.
+
+## Conclusions: 
+To fully understand the paper, a reader must have some knowledge of patents – in particular the US patent system. Though it must be noted that the author did provide good explanations of various relevant aspects of the American patent regime, it is not a particularly easy read for readers unfamiliar with patents given the subject material and its length (48 pages). 
+Nevertheless, the researcher’s attempt to create an initial, predictive model is worthwhile given its potential risk management implications. 
+More importantly, the model establishes a base for future research – in particular with a  data set that covers a larger sample of patents taken over a longer period of time – and with data from other patent-issuing jurisdictions
