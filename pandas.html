@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<!-- saved from url=(0107)http://nbviewer.ipython.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/01%20-%20Lesson.ipynb -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta name="author" content="">
+    
+
+    <!--NEW RELIC Start Perf Measurement-->
+    
+    <!--NREND-->
+
+    <!-- Le styles -->
+    <!--<link href="/static/css/bootstrap.css" rel="stylesheet">-->
+    <link href="http://nbviewer.ipython.org/static/css/docs.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/components/animate.css/animate.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/components/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        // get fixed navbar on mobiles
+        @media (max-width: 767px) /* @grid-float-breakpoint -1 */
+        {
+            .navbar-fixed-top
+            {
+            position: fixed;
+            top: 0;
+            margin-left:0;
+            margin-right:0;
+            }
+        }
+
+        .menu-icon{
+            line-height: 8px;
+            margin-right: 5px;
+            position:relative;
+            top:5px;
+        }
+        
+        @media (min-width: 980px){
+            .menu-text{
+                display:none
+            }
+        }
+
+    </style>
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://nbviewer.ipython.org/static/ico/ipynb_icon_16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-57-precomposed.png">
+    
+    
+    
+
+    
+
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    <meta name="twitter:title" content="Notebook on nbviewer">
+    
+
+    
+    <meta name="twitter:description" content="Check out this IPython notebook!">
+    
+
+    
+    <meta name="twitter:domain" content="nbviewer.ipython.org">
+    
+
+    <meta name="twitter:image:src" content="http://ipython.org/ipython-doc/dev/_images/ipynb_icon_128x128.png">
+    
+    
+    
+
+    <link href="http://nbviewer.ipython.org/static/ipython.min.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/pygments.css" rel="stylesheet">
+    <style type="text/css" media="screen and (min-width:980px)">
+   
+    body{
+        padding-top:50px;
+    }
+
+    </style>
+    <style type="text/css">
+    .imgwrap {
+        text-align: center;
+    }
+    .input_area{
+        padding: 0.4em;
+    }
+    div.input_area > div.highlight > pre {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+    }
+
+    .highlight pre {
+        background-color: transparent;
+    }
+
+    @media (max-width: 767px){
+
+        div.input, div.output_area {
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+        }
+
+        div.prompt {
+            text-align:left;
+        }
+
+    }
+
+    
+    </style>
+    
+    <script type="text/javascript" async="" src="./pandas_files/ga.js"></script><script src="./pandas_files/MathJax.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    init_mathjax = function() {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}},
+                    linebreaks: { automatic: true }
+                }
+            });
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" style=""><div id="MathJax_Message" style="display: none;"></div>
+
+
+  <!-- Navbar
+  ================================================== -->
+    <div id="menubar" class="navbar navbar-fixed-top animated slideOutUp">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+                <li>
+        <a href="http://nbviewer.ipython.org/" title="Home">
+           
+               <span class="fa fa-home fa-2x menu-icon"></span>
+               <span class="menu-text">Home</span>
+           
+       </a>
+   </li>
+                <li>
+        <a href="http://nbviewer.ipython.org/faq" title="FAQ">
+           
+               <span>FAQ</span>
+           
+       </a>
+   </li>
+
+              <li class="">
+                <a href="http://www.ipython.org/">IPython</a>
+              </li>
+              <li>
+              <a href="http://jiffyclub.github.io/open-in-nbviewer/">Open-in-nbviewer</a>
+              </li>
+            </ul>
+            <ul class="nav pull-right"> 
+              
+              
+      
+        <li>
+        <a href="https://bitbucket.org/hrojas/learn-pandas/raw/master/lessons/01%20-%20Lesson.ipynb" title="Download Notebook">
+           
+               <span class="fa fa-download fa-2x menu-icon"></span>
+               <span class="menu-text">Download Notebook</span>
+           
+       </a>
+   </li>
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+
+    
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="-lesson-1-"><strong>Lesson 1</strong></h1>
+<p><strong>Create Data</strong> - We begin by creating our own data set for analysis. This prevents the end user reading this tutorial from having to download any files to replicate the results below. We will export this data set to a text file so that you can get some experience pulling data from a text file.<br><strong>Get Data</strong> - We will learn how to read in the text file. The data consist of baby names and the number of baby names born in the year 1880.<br><strong>Prepare Data</strong> - Here we will simply take a look at the data and make sure it is clean. By clean I mean we will take a look inside the contents of the text file and look for any anomalities. These can include missing data, inconsistencies in the data, or any other data that seems out of place. If any are found we will then have to make decisions on what to do with these records.<br><strong>Analyze Data</strong> - We will simply find the most popular name in a specific year.<br><strong>Present Data</strong> - Through tabular data and a graph, clearly show the end user what is the most popular name in a specific year.       </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong><em>pandas</em></strong> library is used for all the data analysis excluding a small piece of the data presentation section. The <strong><em>matplotlib</em></strong> library will only be needed for the data presentation section. Importing the libraries is the first step we will take in the lesson.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Import all libraries needed for the tutorial</span>
+
+<span class="c"># General syntax to import specific functions in a library: </span>
+<span class="c">##from (library) import (specific library function)</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">read_csv</span>
+
+<span class="c"># General syntax to import a library but no functions: </span>
+<span class="c">##import (library) as (give the library a nickname/alias)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span> <span class="c">#only needed to determine version number</span>
+
+<span class="c"># Enable inline plotting</span>
+<span class="o">%</span><span class="k">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="k">print</span> <span class="s">'Pandas version '</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>Pandas version 0.13.0
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="create-data">Create Data</h1>
+<p>The data set will consist of 5 baby names and the number of births recorded for that year (1880).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># The inital set of baby names and bith rates</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Bob'</span><span class="p">,</span><span class="s">'Jessica'</span><span class="p">,</span><span class="s">'Mary'</span><span class="p">,</span><span class="s">'John'</span><span class="p">,</span><span class="s">'Mel'</span><span class="p">]</span>
+<span class="n">births</span> <span class="o">=</span> <span class="p">[</span><span class="mi">968</span><span class="p">,</span> <span class="mi">155</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">578</span><span class="p">,</span> <span class="mi">973</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To merge these two lists together we will use the <strong><em>zip</em></strong> function.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="sd">'''</span>
+<span class="sd">zip(seq1 [, seq2 [...]]) -&gt; [(seq1[0], seq2[0] ...), (...)]</span>
+<span class="sd">Return a list of tuples, where each tuple contains the i-th element</span>
+<span class="sd">from each of the argument sequences.  The returned list is truncated</span>
+<span class="sd">in length to the length of the shortest argument sequence.</span>
+<span class="sd">'''</span>
+
+<span class="nb">zip</span><span class="err">?</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">BabyDataSet</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span><span class="n">births</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">BabyDataSet</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>[('Bob', 968), ('Jessica', 155), ('Mary', 77), ('John', 578), ('Mel', 973)]
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are basically done creating the data set. We now will use the <strong><em>pandas</em></strong> library to export this data set into a csv file. </p>
+<p><strong><em>df</em></strong> will be a <strong><em>DataFrame</em></strong> object. You can think of this object holding the contents of the BabyDataSet in a format similar to a sql table or an excel spreadsheet. Lets take a look below at the contents inside <strong><em>df</em></strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">BabyDataSet</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'Names'</span><span class="p">,</span> <span class="s">'Births'</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[6]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Names</th>
+      <th>Births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>     Bob</td>
+      <td> 968</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> Jessica</td>
+      <td> 155</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>    Mary</td>
+      <td>  77</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>    John</td>
+      <td> 578</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>     Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Export the dataframe to a <strong><em>csv</em></strong> file. We can name the file <strong><em>births1880.csv</em></strong>. The function <strong><em>to_csv</em></strong> will be used to export the file. The file will be saved in the same location of the notebook unless specified otherwise.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="sd">'''</span>
+<span class="sd">df.to_csv(self, path_or_buf, sep=',', na_rep='', float_format=None, cols=None, header=True, index=True, index_label=None, mode='w', nanRep=None, encoding=None, quoting=None, line_terminator='\n')</span>
+<span class="sd">Write DataFrame to a comma-separated values (csv) file</span>
+<span class="sd">'''</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="err">?</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The only parameters we will use is <strong><em>index</em></strong> and <strong><em>header</em></strong>. Setting these parameters to True will prevent the index and header names from being exported. Change the values of these parameters to get a better understanding of their use.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'births1880.csv'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="get-data">Get Data</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To pull in the text file, we will use the pandas function <em>read_csv</em>. Let us take a look at this function and what inputs it takes.  </p>
+<p>read_csv(filepath_or_buffer, sep=',', dialect=None, compression=None, doublequote=True, escapechar=None, quotechar='"', quoting=0, skipinitialspace=False, lineterminator=None, header='infer', index_col=None, names=None, prefix=None, skiprows=None, skipfooter=None, skip_footer=0, na_values=None, true_values=None, false_values=None, delimiter=None, converters=None, dtype=None, usecols=None, engine='c', delim_whitespace=False, as_recarray=False, na_filter=True, compact_ints=False, use_unsigned=False, low_memory=True, buffer_lines=None, warn_bad_lines=True, error_bad_lines=True, keep_default_na=True, thousands=None, comment=None, decimal='.', parse_dates=False, keep_date_col=False, dayfirst=False, date_parser=None, memory_map=False, nrows=None, iterator=False, chunksize=None, verbose=False, encoding=None, squeeze=False)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">read_csv</span><span class="err">?</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Even though this functions has many parameters, we will simply pass it the location of the text file.  </p>
+<p>Location = C:\Users\ENTER_USER_NAME.xy\startups\births1880.csv  </p>
+<p><strong><em>Note:</em></strong> Depending on where you save your notebooks, you may need to modify the location above.  </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">Location</span> <span class="o">=</span> <span class="s">r'C:\Users\david\births1880.csv'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">Location</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice the <strong><em>r</em></strong> before the string. Since the slashes are special characters, prefixing the string with a <strong><em>r</em></strong> will escape the whole string.  </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">df</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[11]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bob</th>
+      <th>968</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td> Jessica</td>
+      <td> 155</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>    Mary</td>
+      <td>  77</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>    John</td>
+      <td> 578</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>     Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>4 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This brings us the our first problem of the exercise. The <strong><em>read_csv</em></strong> function treated the first record in the text file as the header names. This is obviously not correct since the text file did not provide us with header names.  </p>
+<p>To correct this we will pass the <strong><em>header</em></strong> parameter to the <em>read_csv</em> function and set it to <strong><em>None</em></strong> (means null in python).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">Location</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[12]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>     Bob</td>
+      <td> 968</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> Jessica</td>
+      <td> 155</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>    Mary</td>
+      <td>  77</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>    John</td>
+      <td> 578</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>     Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we wanted to give the columns specific names, we would have to pass another paramter called <strong><em>names</em></strong>. We can also omit the <em>header</em> parameter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="n">Location</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'Names'</span><span class="p">,</span><span class="s">'Births'</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[13]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Names</th>
+      <th>Births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>     Bob</td>
+      <td> 968</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td> Jessica</td>
+      <td> 155</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>    Mary</td>
+      <td>  77</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>    John</td>
+      <td> 578</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>     Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can think of the numbers [0,1,2,3,4] as the row numbers in an Excel file. In pandas these are part of the <strong><em>index</em></strong> of the dataframe. You can think of the index as the primary key of a sql table with the exception that an index is allowed to have duplicates.  </p>
+<p>[Names, Births] can be though of as column headers similar to the ones found in an Excel spreadsheet or sql database.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Delete the csv file now that we are done using it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[14]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">Location</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="prepare-data">Prepare Data</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The data we have consists of baby names and the number of births in the year 1880. We already know that we have 5 records and none of the records are missing (non-null values).  </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong><em>Names</em></strong> column at this point is of no concern since it most likely is just composed of alpha numeric strings (baby names). There is a chance of bad data in this column but we will not worry about that at this point of the analysis. The <strong><em>Births</em></strong> column should just contain integers representing the number of babies born in a specific year with a specific name. We can check if the all the data is of the data type integer. It would not make sense to have this column have a data type of float. I would not worry about any possible outliers at this point of the analysis.  </p>
+<p>Realize that aside from the check we did on the "Names" column, briefly looking at the data inside the dataframe should be as far as we need to go at this stage of the game. As we continue in the data analysis life cycle we will have plenty of opportunities to find any issues with the data set.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[15]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Check data type of the columns</span>
+<span class="k">print</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>Names     object
+Births     int64
+dtype: object
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[16]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Check data type of Births column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Births</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[16]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>dtype('int64')
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see the <em>Births</em> column is of type <strong><em>int</em></strong>, thus no floats (decimal numbers) or alpha numeric characters will be present in this column.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="analyze-data">Analyze Data</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To find the most popular name or the baby name with the higest birth rate, we can do one of the following.  </p>
+<ul>
+<li>Sort the dataframe and select the top row</li>
+<li>Use the <strong><em>max()</em></strong> attribute to find the maximum value</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[17]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Method 1:</span>
+<span class="n">Sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="s">'Births'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">Sorted</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[17]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Names</th>
+      <th>Births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td> Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[18]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Method 2:</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[18]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+
+<pre>973
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="present-data">Present Data</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we can plot the <strong><em>Births</em></strong> column and label the graph to show the end user the highest point on the graph. In conjunction with the table, the end user has a clear picture that <strong>Mel</strong> is the most popular baby name in the data set. </p>
+<p><strong><em>plot()</em></strong> is a convinient attribute where pandas lets you painlessly plot the data in your dataframe. We learned how to find the maximum value of the Births column in the previous section. Now to find the actual baby name of the 973 value looks a bit tricky, so lets go over it.  </p>
+<p><strong>Explain the pieces:</strong><br><em>df['Names']</em> - This is the entire list of baby names, the entire Names column<br><em>df['Births']</em> - This is the entire list of Births in the year 1880, the entire Births column<br><em>df['Births'].max()</em> - This is the maximum value found in the Births column  </p>
+<p>[df['Births'] == df['Births'].max()] <strong>IS EQUAL TO</strong> [Find all of the records in the Births column where it is equal to 973]<br>df['Names'][df['Births'] == df['Births'].max()] <strong>IS EQUAL TO</strong> Select all of the records in the Names column <strong>WHERE</strong> [The Births column is equal to 973]  </p>
+<p>An alternative way could have been to use the <strong><em>Sorted</em></strong> dataframe:<br>Sorted['Names'].head(1).value  </p>
+<p>The <strong><em>str()</em></strong> function simply converts an object into a string.  </p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[19]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="c"># Create graph</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c"># Maximum value in the data set</span>
+<span class="n">MaxValue</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c"># Name associated with the maximum value</span>
+<span class="n">MaxName</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'Names'</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c"># Text to display on graph</span>
+<span class="n">Text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">MaxValue</span><span class="p">)</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">MaxName</span>
+
+<span class="c"># Add text to graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">Text</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MaxValue</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> 
+                 <span class="n">xycoords</span><span class="o">=</span><span class="p">(</span><span class="s">'axes fraction'</span><span class="p">,</span> <span class="s">'data'</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s">'offset points'</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s">"The most popular name"</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s">'Births'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="c">#Sorted.head(1) can also be used</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>The most popular name
+
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[19]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Names</th>
+      <th>Births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td> Mel</td>
+      <td> 973</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,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">
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell">
+<div class="input">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Author:</strong> <a href="http://hdrojas.pythonanywhere.com/">David Rojas LLC</a>  </p>
+</div>
+</div>
+</div>
+</div>
+
+
+     <!-- Footer
+     ================================================== -->
+      <footer class="footer">
+      <p class="pull-right"><a href="http://nbviewer.ipython.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/01%20-%20Lesson.ipynb#">Back to top</a></p>
+      <p>More info on <a href="http://ipython.org/"> IPython website</a>.
+      <a href="https://github.com/ipython/nbviewer">The code for this site</a> is licensed under <a href="https://github.com/ipython/nbviewer/blob/master/LICENSE.txt" target="_blank">BSD</a>.
+      Built thanks to <a href="http://twitter.github.com/bootstrap/"> Twitter Bootstrap</a>
+      </p>
+      <p>This web site does not host notebooks, it only renders notebooks available on other websites.
+      Thanks to all our <a href="https://github.com/ipython/nbviewer/contributors">contributors</a> and to <a href="http://www.rackspace.com/">Rackspace</a> for hosting.</p>
+      
+      <p class="text-muted">
+          nbviewer version:
+          <a href="https://github.com/ipython/nbviewer/commit/6995048394d12baa48ba5375a9276035f2aa484f">6995048</a>
+          (Wed, 26 Feb 2014 20:05:49 +0000)
+      </p>
+      
+      </footer>
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!--<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>-->
+    <script src="./pandas_files/jquery.min.js"></script>
+    <!--<script src="/static/js/google-code-prettify/prettify.js"></script>-->
+    <!--<script src="/static/js/bootstrap-transition.js"></script>-->
+    <!--<script src="/static/js/bootstrap-alert.js"></script>-->
+    <!--<script src="/static/js/bootstrap-modal.js"></script>-->
+    <!--<script src="/static/js/bootstrap-dropdown.js"></script>-->
+    <!--<script src="/static/js/bootstrap-scrollspy.js"></script>-->
+    <!--<script src="/static/js/bootstrap-tab.js"></script>-->
+    <!--<script src="/static/js/bootstrap-tooltip.js"></script>-->
+    <!--<script src="/static/js/bootstrap-popover.js"></script>-->
+    <!--<script src="/static/js/bootstrap-button.js"></script>-->
+    <script src="./pandas_files/bootstrap-collapse.js"></script>
+    <!--<script src="/static/js/bootstrap-carousel.js"></script>-->
+    <!--<script src="/static/js/bootstrap-typeahead.js"></script>-->
+    <!--<script src="/static/js/application.js"></script>-->
+    <script src="./pandas_files/headroom.min.js"></script>
+    <script src="./pandas_files/jQuery.headroom.min.js"></script>
+
+
+    
+    
+    
+    <script>
+    $(document).ready(
+                function(){
+                    $("#menubar").headroom({
+                        "tolerance": 5,
+                        "offset": 205,
+                        "classes": {
+                            "initial": "animated",
+                            "pinned": "slideInDown",
+                            "unpinned": "slideOutUp"
+                        }
+                    })
+                }
+            );
+    </script>
+
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38683231-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <!--NEW RELIC Stop Perf Measurement-->
+    
+    <!--NEW RELIC End-->
+  
+</body></html>

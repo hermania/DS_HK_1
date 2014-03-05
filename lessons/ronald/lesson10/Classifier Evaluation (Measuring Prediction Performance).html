@@ -1,0 +1,77 @@
+
+<!-- saved from url=(0051)http://webdocs.cs.ualberta.ca/~eisner/measures.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Classifier Evaluation (Measuring Prediction Performance)</title>
+<meta name="keywords" content="prediction measures, classifiers, evaluation, precision, recall, accuracy, specificity, sensitivity">
+</head><body><h2>Basic Evaluation Measures for Classifier Performance</h2>
+<h3>Introduction</h3>
+<p>
+In Bioinformatics and machine learning in general, there is a large variation in the measures that are used to evaluate prediction systems. However, the measures used in a particular research project may not be appropriate to the particular problem domain. This page tries to explain some of the advantages and disadvantages of different measures.</p>
+
+<p>
+First an introduction to some terminology is necessary. The following shows a confusion matrix which depicts how predictions on instances are tabulated:
+</p>
+
+<table border="1" cellpadding="3">
+<tbody><tr><td>&nbsp;</td><td>&nbsp;</td><th colspan="2" align="center">Predicted Label</th></tr>
+<tr><td>&nbsp;</td><th>&nbsp;</th><th>Positive</th><th>Negative</th></tr>
+<tr><th rowspan="2">Known Label</th><th>Positive</th><td>True Positive<br>(TP)</td><td>False Negative<br>(FN)</td></tr>
+<tr><th>Negative</th><td>False Positive<br>(FP)</td><td>True Negative<br>(TN)</td></tr>
+</tbody></table>
+
+<p>
+For simplicity, the assumption is that each instance can only be assigned one of two classes: Positive or Negative (e.g. a patient's tumor may be malignant or benign). Each instance (e.g. a patient) has a Known label, and a Predicted label. Some method is used (e.g. cross-validation) to make predictions on each instance. Each instance then increments one cell in the confusion matrix.
+</p>
+
+<p>
+A confusion matrix can be summarized using various formulas. This table shows the most commonly used formulas<sup>1</sup>:
+</p>
+
+<table border="1" cellpadding="3">
+<tbody><tr><th>Measure</th><th>Formula</th><th>Intuitive Meaning</th></tr>
+<tr><td>Precision</td><td>TP / (TP + FP)</td><td>The percentage of positive predictions that are correct.</td></tr>
+<tr><td>Recall / Sensitivity</td><td>TP / (TP + FN)</td><td>The percentage of positive labeled instances that were predicted as positive.</td></tr>
+<tr><td>Specificity</td><td>TN / (TN + FP)</td><td>The percentage of negative labeled instances that were predicted as negative.</td></tr>
+<tr><td>Accuracy</td><td>(TP + TN) / (TP + TN + FP + FN)</td><td>The percentage of predictions that are correct.</td></tr>
+</tbody></table>
+
+<h3>Discussion of Measures</h3>
+
+<p>Different problem domains call for the need to use different measures for summarizing prediction quality. 
+</p>
+
+<p>1.) For example, in a data set of 10,000 samples, where 100 of these samples are labeled positive, a predictor that predicts "Negative" for every instance it is presented with evaluates to Precision = 100%, Accuracy = 99%, and Specificity = 100%. This predictor would be entirely useless, and yet these measures show it performs very well. The same predictor would evaluate to Recall = 0%. In this case, Recall seems to be most in tune with how well the classifier is actually performing.
+</p>
+
+<p>2.) If a classifier predicts positive on all instances in the data set in case 1.), then Precision = 1%, Recall = 100%, Accuracy = 1% and Specificity = 0%. In this case, Precision, Accuracy, and Specificity show that this classifier is problematic.
+</p>
+
+<p>3.) The other extreme is a data set where many of the examples are positive. For example if 9,900 out of 10,000 instances are positive, and a classifier predicts positive on all instances, then Precision = 99%, Accuracy = 99%, Specificity = 0%, and Recall = 100%. In this case, Specificity shows that this classifier is problematic.
+</p>
+
+<p>4.) If a classifier predicts negative on all instances in the data set in case 3.), then Precision = 100%, Recall = 0%, Specificity = 100%, and Accuracy = 1%. Here, Recall, and Accuracy inform us that there is a problem with this classifier system.
+</p>
+
+<p>Out of these four cases, the sets of measures that inform us of problems with the classifier are {Recall} (Case 1), {Precision, Accuracy, Specificity} (Case 2), {Specificity} (Case 3), and {Recall, Accuracy} (Case 4). The smallest set of measures that covers all of these cases is {Recall, Specificity}.
+</p>
+
+<p>This seems to suggest that, without any knowledge of the distribution of data, the best measures to use are Recall (Sensitivity) and Specificity to allow one to find problems with classifiers. However, many other cases can arise other than these four boundary cases. Consider the following confusion matrix for a data set with 600 out of 11,100 instances positive:
+</p>
+
+<table border="1" cellpadding="3">
+<tbody><tr><td>&nbsp;</td><td>&nbsp;</td><th colspan="2" align="center">Predicted Label</th></tr>
+<tr><td>&nbsp;</td><th>&nbsp;</th><th>Positive</th><th>Negative</th></tr>
+<tr><th rowspan="2">Known Label</th><th>Positive</th><td>500</td><td>100</td></tr>
+<tr><th>Negative</th><td>500</td><td>10,000</td></tr>
+</tbody></table>
+
+<p>In this case, Precision = 50%, Recall = 83%, Specificity = 95%, and Accuracy = 95%. In this case, Precision is low, which means the classifier is predicting positives poorly. However, the three other measures seem to suggest that this is a good classifier. This just goes to show that the problem domain has a major impact on the measures that should be used to evaluate a classifier within it, and that looking at the 4 simple cases presented is not sufficient.</p>
+
+<h3>Conclusion</h3>
+
+<p>Often in Biological applications the majority of the examples are negative<sup>2</sup>, and here specificity and accuracy will always be high as long as the classifier is not predicting too many positives. For this reason, Precision and Recall are sufficient to evaluate predictors on these data sets. In general, all three measures (Precision, Recall, and Specificity) or the entire confusion matrix should be presented if one does not know the appropriate measures to use for the distribution of their data set.</p>
+
+<br><hr><br>
+<u>References</u>:<br><br>[1]  Z. Lu et al., Predicting Subcellular Localization of Proteins using Machine-Learned Classifiers, Bioinformatics, Volume 20, Issue 4, March 2004, pp. 547 - 556. (<a href="http://www.cs.ualberta.ca/~eisner/docs/2003bioinformatics.pdf">PDF</a>).
+<br><br>[2] R Eisner et al., Improving Protein Function Prediction using the Hierarchical Structure of the Gene Ontology, 2005 IEEE Symposium on Computational Intelligence in Bioinformatics and Computational Biology, November 2005, 10 ms.(<a href="http://webdocs.cs.ualberta.ca/~eisner/CIBCB-GO.pdf">PDF</a>).
+
+</body></html>

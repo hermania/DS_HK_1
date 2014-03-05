@@ -1,8 +1,8 @@
-
+import pandas as pd
 import requests
 
 def get_nytimes(n):
-    assert 31 > n
+    assert 30 > n
     base_url = 'http://stat.columbia.edu/~rachel/datasets/'
     csv_data = []
     header = ''
